@@ -14,18 +14,33 @@ print("function practice")
 // 2. type property belong to type itself, not to any one instance  of that type
 
 
+
+
+// what singleton should satify
+// 1. create once ;
+// 2. thread safe
+// 3. the initializer of a singleton needs to be private
+// https://krakendev.io/blog/the-right-way-to-write-a-singleton
+
+
 class A {
     static let  shareA:A = {
         let a = A()
         print("-----")
-
         return a
     }()
-
+    // 3. set it to private
+    private init(){
+    }
+    
 }
 
 let a = A.shareA
 let b = A.shareA
+//let c = A()
+
+let code = 150
+print(200..<300)
 
 
 

@@ -16,9 +16,20 @@ class FLCache: NSObject {
    
     static let shareInstance = FLCache()
 
+    private override init() { }
     
-    override init() {
-        super.init()
+    
+    //
+    func setObject(_ object:Any,key:String )  {
+        
+        var __block a = nil;
+        
+        concurrentQueue.sync(flags: .barrier) {
+    
+        }
+        
+    
+        
     }
 
 }
