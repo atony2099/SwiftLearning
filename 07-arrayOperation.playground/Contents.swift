@@ -29,6 +29,17 @@ print(h)
 
 
 
+///===== MAP
+let g = [1,3,3,5]
+g.enumerated().map { (inex,num) in
+    print(inex,num)
+}
+
+
+
+
+
+
 
 
 

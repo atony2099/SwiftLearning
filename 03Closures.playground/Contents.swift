@@ -28,4 +28,33 @@ let rName = names.sorted(by: { $0 > $1 } )
 print(rName);
 
 
-// 代替
+
+
+
+//
+//=========== trailing closure =========
+//
+// when:  If a closure expression
+// is provided as the function or method’s (only argument） //
+
+// omit : 1, paramater name 2. ()
+//
+//
+
+
+//======== 尾随闭包 在函数的末尾，可以省略参数和括号
+func tailClosure (tail:(_ name:String) -> String?) {
+    let innerName = "fenglin"
+    tail(innerName)
+    
+}
+
+
+
+tailClosure { (name) -> String? in
+    print(name)
+    return "cc"
+}
+
+
+

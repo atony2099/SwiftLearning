@@ -12,6 +12,10 @@ if 0...10 ~= 3 {
     print("hello wrold")
 }
 
+let a = Array.init(repeating: 1, count: 9)
+
+print(a)
+
 
 
 
