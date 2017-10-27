@@ -8,7 +8,7 @@ print(0.15+0.15 == 0.3)
 
 
 // "pattern-match" operator
-if 0...10 ~= 3 {
+if 0...10 ~= 10 {
     print("hello wrold")
 }
 

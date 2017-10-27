@@ -8,6 +8,9 @@ var str = "Hello, playground"
 var u = "nihao";
 var m = "good";
 
+var array:Array<Int> = [1,2];
+var dict:Dictionary<String:String>?
+
 
 // 1.泛型函数 =====
 func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
@@ -18,6 +21,13 @@ func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
 
 swapTwoValues(&u, &m)
 print(u,m)
+
+func reback<T>(a:T) -> T {
+    return a
+}
+
+let c =  reback(a: 100)
+print(c)
 
 
 

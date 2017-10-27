@@ -72,6 +72,14 @@ do {
 }
 
 
+
+do {
+   throw NumberError.Not4error
+}catch {
+    print("cathc the eroor")
+}
+
+
 //3. 简单的 try catch方式
 let c = try?checkNum(4)
 print(c)
@@ -93,11 +101,15 @@ func wrapCheckNum(_ num:Int)throws ->String {
 }
 
 
+
+
+// 5. do ----- catch 的是指 只要在 do里面throw的 ，
 do {
-    try wrapCheckNum(4)
-}  catch NumberError.Not4error{
-    print("5)Not4error")
+    throw NumberError.Not5error
+}  catch {
+    print("hahah ---- i catch it ")
 }
+
 
 
 
