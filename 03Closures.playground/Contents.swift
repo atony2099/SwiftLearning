@@ -6,12 +6,38 @@ var str = "Hello, playground"
 
 
 
+// 闭包的 最完整形式 ==== in 是闭包的标志
+let closure  = { (name:String?, age:Int) -> Int in
+    if name != nil {
+        return age
+    } else {
+        return age + 1
+    }
+}
+let result = closure("lala", 100);
+
+
+
+func test01(username:String) -> (String) -> String {
+    let blcok =  { (s1:String) -> String in
+        return s1
+    }
+    return blcok
+}
+let block = test01(username: "123")
+
+
+
+
+
+
+// omit argument types, the agrument type can be inferred,so the argument
 let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
 let revesName = names.sorted {(s1, s2) -> Bool in
     return s1 < s2;
 }
-
 print(revesName)
+
 
 // omit -- return
 // 001 ===== Single-expression closures can implicitly return the result of their single expression by omitting the return keyword from their declarationlet

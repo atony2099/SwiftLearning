@@ -18,5 +18,15 @@ print(a)
 
 
 
+func test(name:String = "fenglin"){
+    print(name)
+}
+
+test()
+test(name: "tangtang")
+
+
+
+
 
 

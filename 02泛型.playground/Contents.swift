@@ -9,8 +9,6 @@ var u = "nihao";
 var m = "good";
 
 var array:Array<Int> = [1,2];
-var dict:Dictionary<String:String>?
-
 
 // 1.泛型函数 =====
 func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
@@ -69,6 +67,80 @@ class SomeClass:GenericProtocol{
 
 let a = SomeClass()
 print(a.anyProperty)
+
+
+///// ============where的理解，对泛型类型进一步限制
+func checkName<T>(name:T) where T:Equatable {
+    print(name)
+}
+
+checkName(name: "aa")
+
+class animal<T> where T:Equatable   {
+    
+}
+
+// 1.通过extension限制类型
+class NameClass<T>{
+    
+}
+extension NameClass where T:Equatable{
+    func printOut(_ item:T)  {
+        print(item)
+    }
+}
+let name = NameClass<String>()
+name.printOut("AA")
+
+
+
+// 2. 通过extension限制protocol,where通过分号进行分割
+protocol  NumberProtocol{
+    associatedtype NumberType;
+    
+}
+extension NumberProtocol where NumberType:Equatable ,NumberType == Double{
+    func printOutNumber(_ number:NumberType)  {
+        print(number)
+    }
+}
+extension NameClass:NumberProtocol {
+    typealias NumberType = Double
+    
+}
+
+let cc = NameClass<String>()
+cc.printOutNumber(100)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 2. 通过protocol限制类型
+
+
+
+
+
+
+
+
+
+
+
 
 
 

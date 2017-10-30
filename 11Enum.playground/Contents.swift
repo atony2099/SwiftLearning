@@ -48,6 +48,42 @@ print(School.top.rawValue)
 
 
 
+// ===== 4. advanced useage  ，枚举实际上也是一种高级的数据结构，跟类，结构体一样
+// 不能有
+enum Api: String {
+    case homePage = "baidu.com"
+    case perSon = "user.com"
+    
+    var baseUrl:String {return "www"}
+    
+    var totalUrl:String {
+        return baseUrl  + rawValue
+    }
+    
+    // function  ===
+    func printOut(){
+        print(rawValue)
+    }
+}
+
+let api =  Api(rawValue: "baidu.com")
+let api2 = Api.perSon
+api!.totalUrl
+api2.totalUrl
+
+api2.printOut()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

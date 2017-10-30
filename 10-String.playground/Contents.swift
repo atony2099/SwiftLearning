@@ -29,6 +29,8 @@ print( "\(array0[1].description)" == " ")
 
 print(String.self)
 
+var default = "aaa"
+
 
 
 
