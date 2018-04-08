@@ -2,6 +2,12 @@
 
 import UIKit
 
+let url = URL.init(string: "")
+
+print(url)
+
+
+
 var str = "Hello, playground"
 print("function practice")
 print(0.15+0.15 == 0.3)
@@ -24,6 +30,7 @@ func test(name:String = "fenglin"){
 
 test()
 test(name: "tangtang")
+
 
 
 

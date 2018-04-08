@@ -6,6 +6,28 @@ var str = "Hello, playground"
 
 print("function practice")
 
+let qq = [1,3,4,5,2]
+
+for a in qq {
+    if a > 3 {
+        continue
+    }
+    print(a)
+}
+
+qq.filter { (numbe) -> Bool in
+    return numbe > 9
+}
+print(qq)
+
+
+//qq.enumerated().map {
+//
+//}
+
+
+
+
 
 // a. 第一个区别
 // // 1.map:只会进行直接转换
@@ -37,7 +59,26 @@ g.enumerated().map { (inex,num) in
 
 
 
+var dict = ["1":10,"2":20]
+print(dict)
 
+dict.removeValue(forKey: "1")
+print(dict)
+
+
+
+//=========== dict ====
+// 1. addEntry ===== replace all
+var  name:NSMutableDictionary = ["1":1,"2":2]
+name.addEntries(from: ["1":100])
+print(name)
+
+
+// ===== array
+let z = [1,2,3]
+let n = [3,4]
+var q = z + n;
+print(q)
 
 
 

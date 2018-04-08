@@ -3,6 +3,12 @@
 import UIKit
 
 print("function practice")
+1 % 2
+
+
+// NSString把所有字符都当初一个长度
+let strrr:NSString = "唐1a"
+print(strrr.length)
 
 
 /// ==== 1，====== 简单理解， character 是 string 的基本组成单元
@@ -29,7 +35,9 @@ print( "\(array0[1].description)" == " ")
 
 print(String.self)
 
-var default = "aaa"
+
+
+
 
 
 

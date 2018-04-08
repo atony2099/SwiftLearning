@@ -19,12 +19,27 @@ let result = closure("lala", 100);
 
 
 func test01(username:String) -> (String) -> String {
-    let blcok =  { (s1:String) -> String in
-        return s1
+    let blcok =  { (username) -> String in
+        return username
     }
     return blcok
 }
 let block = test01(username: "123")
+
+
+//func test02(username:String) -> (String) -> String {
+//    let blcok =  { (s1:String) -> String in
+//        return  ge
+//    }
+//    return blcok
+//}
+//func getResult<T>()->T{
+//    return "aaa"
+//}
+//
+//let block2 = test02(username: "123")
+
+
 
 
 

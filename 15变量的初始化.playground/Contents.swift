@@ -2,63 +2,113 @@
 import UIKit
 import Foundation
 
-// properties
-// 什么是存储属性：get the value directly
-// dont store value,  caculate everyTime
-//
-//
-//
-//
-//
-//
-//
+//  store ----------- properties
+// can store value
 
 
-//1. storeValuee ， swift不可以直接拿到变量的值
-
-//a. var : can change value   ==== b let  can change value
-struct FixLength{
-    var firstValue:Int
-    let constValue:Int
+// contain: var  and let
+// var： can change
+// let: keep constant
+struct Store {
+    var name:String
+    let age:Int
 }
-var value = FixLength(firstValue: 100, constValue: 200);
-
-value.firstValue = 99;
-// value.constValue = 1000;
+let st = Store(name: "tang", age: 18)
+//st.name = "jim" ====== error
 
 
-
-// c.lazy init: only init once
-class DataM {
-    lazy var name = [String]();
+// only read - inner
+class privateT {
+    public private(set) var name:String  //  === only write innner
+    init() {
+        name = "taang"
+    }
 }
-let m = DataM()
-m.name.append("fengin")
+
+let p = privateT()
+//p.name = "kk"
 
 
-
-
-// 计算属性，=== 不存储值，getfromother property or number ,set other perperty
-struct Fenglin {
-    var  commonIncome = 100;
-    let  shebao = 50;
+// lazy delay excute
+class lazyT {
+    lazy var name = Store(name: "tang", age: 18)
     
-    var salary:Int {
+}
+
+
+// compulte value dont store any value , just only compute
+
+// === geter and setter  property ==========
+struct Point {
+    var x = 0.0, y = 0.0
+}
+struct Size {
+    var width = 0.0, height = 0.0
+}
+
+struct Rect {
+    var origin = Point()
+    var size = Size()
+    var center: Point {
         get {
-            return commonIncome + shebao
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
         }
-        
-        set {
-             commonIncome = newValue - shebao
+        set(newCenter) {
+            origin.x = newCenter.x - (size.width / 2)
+            origin.y = newCenter.y - (size.height / 2)
         }
-        
+    }
+}
+var square = Rect(origin: Point(x: 0.0, y: 0.0),
+                  size: Size(width: 10.0, height: 10.0))
+let initialSquareCenter = square.center
+square.center = Point(x: 15.0, y: 15.0)
+
+
+
+// read-only --- just read
+struct Cuboid {
+    var width = 0.0, height = 0.0, depth = 0.0
+    var  volume: Double {
+        return width * height * depth
+    }
+}
+
+
+
+
+
+// ===== static 和 class  都可以表====类型作用变量
+
+// static can use in class struct enum
+// class only use in class  and compute value , but it can be overwrite
+class propert{
+   class var firstname = "jim"  //==== cant define store value
+    
+    static var name:String {
+        return "tang"
+    }
+    
+    class var priName:String {
+        return "tang"
     }
     
 }
 
+class childp:propert {
+    
+    static var name:String {
+        return "tang"
+    }
 
+    override class var priName:String {
+        return "tang"
+    }
 
-
+    
+}
 
 
 

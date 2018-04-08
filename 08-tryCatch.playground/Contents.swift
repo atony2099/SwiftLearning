@@ -111,20 +111,6 @@ do {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 enum VendingMachineError: Error {
     case invalidSelection
     case insufficientFunds(coinsNeeded: Int)
